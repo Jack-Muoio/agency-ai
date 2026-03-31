@@ -1,6 +1,6 @@
 import React from 'react';
 import assets from "../assets/assets.js";
-import Title from "./Title.jsx";
+import Title from "../UI/Title.jsx";
 import ServiceCard from "./ServiceCard.jsx";
 
 const Services = () => {
