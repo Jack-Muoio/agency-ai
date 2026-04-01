@@ -7,20 +7,20 @@ const OurWork = () => {
   const workData = [
     {
       title: 'Mobile app marketing',
-      description: 'We turn bold ideas into powerful digital solutions that connect, engage...',
+      description: 'Data-driven launch strategies that cut through the noise and drive high-intent users.',
       image: assets.work_mobile_app
     },
     {
       title: 'Dashboard management',
-      description: 'We help execute your plan and deliver results.',
+      description: 'Transforming complex data into real-time insights for faster, smarter decision-making.',
       image: assets.work_dashboard_management
     },
     {
       title: 'Fitness app promotion',
-      description: 'We help you create a marketing strategy that drives results.',
+      description: 'High-energy campaigns designed to inspire movement and foster loyal user communities.',
       image: assets.work_fitness_app
     }
-  ]
+  ];
 
   return (
     <div id='our-work' className='flex flex-col items-center gap-7 px-4
