@@ -2,6 +2,7 @@ import React from 'react';
 import Title from "../UI/Title.jsx";
 import assets from "../assets/assets.js";
 import toast from "react-hot-toast";
+import { motion } from "motion/react"
 
 const ContactUs = () => {
 
@@ -32,9 +33,19 @@ const ContactUs = () => {
     }
 
   return (
-    <div id='contact-us' className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
+    <motion.div
+        initial="hidden"
+        whileInView="visible"
+        transition={{staggerChildren: 0.2}}
+        viewport={{once: true}}
+        id='contact-us' className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
       <Title title='Reach out to us' desc='Let’s start a conversation. Whether you need an initial strategy or immediate execution, we’re ready to help you capture authority in your space.'/>
-        <form onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
+        <motion.form
+            initial={{opacity: 0, y: 30}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: 0.4}}
+            viewport={{once: true}}
+            onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
             <div>
                 <p className='mb-2 text-sm font-medium'>Your name</p>
                 <div className=' flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600'>
@@ -53,11 +64,11 @@ const ContactUs = () => {
                 <p className='mb-2 text-sm font-medium'>Message</p>
                 <textarea name='message' rows="8" placeholder='Enter your message' className='w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600' required></textarea>
             </div>
-            <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all'>
+            <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full hover:scale-103 transition-all'>
                 Submit <img src={assets.arrow_icon} className='w-4'/>
             </button>
-        </form>
-    </div>
+        </motion.form>
+    </motion.div>
   );
 };
 

@@ -3,10 +3,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 * {
   font-family: "Manrope", sans-serif;
   font-weight: 500;
+  cursor: none !important;
 }
 
 @theme {
